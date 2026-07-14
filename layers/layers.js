@@ -44,9 +44,9 @@ var lyr_grifos_2 = new ol.layer.Vector({
 
 lyr_OpenStreetMap_0.setVisible(true);lyr_GoogleSatelite_1.setVisible(true);lyr_grifos_2.setVisible(true);
 var layersList = [lyr_OpenStreetMap_0,lyr_GoogleSatelite_1,lyr_grifos_2];
-lyr_grifos_2.set('fieldAliases', {'fid': 'fid', 'ID_GRIFO': 'ID_GRIFO', 'UBICACION': 'UBICACION', 'ESTADO': 'ESTADO', 'FOTO_ANTES': 'FOTO_ANTES', 'FOTO_PINTURA': 'FOTO_PINTURA', 'FOTO_ROTULADO': 'FOTO_ROTULADO', });
-lyr_grifos_2.set('fieldImages', {'fid': 'TextEdit', 'ID_GRIFO': 'TextEdit', 'UBICACION': 'TextEdit', 'ESTADO': 'ValueMap', 'FOTO_ANTES': 'ExternalResource', 'FOTO_PINTURA': 'ExternalResource', 'FOTO_ROTULADO': 'ExternalResource', });
-lyr_grifos_2.set('fieldLabels', {'fid': 'hidden field', 'ID_GRIFO': 'inline label - visible with data', 'UBICACION': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'FOTO_ANTES': 'inline label - visible with data', 'FOTO_PINTURA': 'inline label - visible with data', 'FOTO_ROTULADO': 'hidden field', });
+lyr_grifos_2.set('fieldAliases', {'fid': 'fid', 'ID_GRIFO': 'ID_GRIFO', 'UBICACION': 'UBICACION', 'ESTADO': 'ESTADO', 'FOTO_ANTES': 'FOTO_ANTES', 'FOTO_PINTURA': 'FOTO_PINTURA', 'FOTO_ROTULADO': 'FOTO_ROTULADO', 'COMUNA': 'COMUNA', 'COLOR AMARILLO REY': 'COLOR AMARILLO REY', 'SEÑALETICA': 'SEÑALETICA', 'VV_PIE_VISIBLE': 'VV_PIE_VISIBLE', 'FUGA': 'FUGA', 'TAPA_BOCA': 'TAPA_BOCA', 'HILO_BUENO': 'HILO_BUENO', });
+lyr_grifos_2.set('fieldImages', {'fid': 'TextEdit', 'ID_GRIFO': 'TextEdit', 'UBICACION': 'TextEdit', 'ESTADO': 'ValueMap', 'FOTO_ANTES': 'ExternalResource', 'FOTO_PINTURA': 'ExternalResource', 'FOTO_ROTULADO': 'ExternalResource', 'COMUNA': '', 'COLOR AMARILLO REY': '', 'SEÑALETICA': '', 'VV_PIE_VISIBLE': '', 'FUGA': '', 'TAPA_BOCA': '', 'HILO_BUENO': '', });
+lyr_grifos_2.set('fieldLabels', {'fid': 'hidden field', 'ID_GRIFO': 'inline label - visible with data', 'UBICACION': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'FOTO_ANTES': 'inline label - visible with data', 'FOTO_PINTURA': 'inline label - visible with data', 'FOTO_ROTULADO': 'hidden field', 'COMUNA': 'no label', 'COLOR AMARILLO REY': 'no label', 'SEÑALETICA': 'no label', 'VV_PIE_VISIBLE': 'no label', 'FUGA': 'no label', 'TAPA_BOCA': 'no label', 'HILO_BUENO': 'no label', });
 lyr_grifos_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
