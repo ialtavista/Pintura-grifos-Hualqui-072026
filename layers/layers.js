@@ -37,14 +37,16 @@ var lyr_grifos_2 = new ol.layer.Vector({
                 style: style_grifos_2,
                 popuplayertitle: 'grifos',
                 interactive: true,
-                title: '<img src="styles/legend/grifos_2.png" /> grifos'
-            });
+    title: 'grifos<br />\
+    <img src="styles/legend/grifos_2_0.png" /> PENDIENTE<br />\
+    <img src="styles/legend/grifos_2_1.png" /> PINTADO<br />\
+    <img src="styles/legend/grifos_2_2.png" /> PINTADO Y ROTULADO<br />' });
 
 lyr_OpenStreetMap_0.setVisible(true);lyr_GoogleSatelite_1.setVisible(true);lyr_grifos_2.setVisible(true);
 var layersList = [lyr_OpenStreetMap_0,lyr_GoogleSatelite_1,lyr_grifos_2];
-lyr_grifos_2.set('fieldAliases', {'fid': 'fid', 'ID_GRIFO': 'ID_GRIFO', 'solicitud_DIRECCION': 'solicitud_DIRECCION', });
-lyr_grifos_2.set('fieldImages', {'fid': '', 'ID_GRIFO': '', 'solicitud_DIRECCION': '', });
-lyr_grifos_2.set('fieldLabels', {'fid': 'no label', 'ID_GRIFO': 'inline label - visible with data', 'solicitud_DIRECCION': 'inline label - visible with data', });
+lyr_grifos_2.set('fieldAliases', {'fid': 'fid', 'ID_GRIFO': 'ID_GRIFO', 'UBICACION': 'UBICACION', 'ESTADO': 'ESTADO', 'FOTO_ANTES': 'FOTO_ANTES', 'FOTO_PINTURA': 'FOTO_PINTURA', 'FOTO_ROTULADO': 'FOTO_ROTULADO', });
+lyr_grifos_2.set('fieldImages', {'fid': 'TextEdit', 'ID_GRIFO': 'TextEdit', 'UBICACION': 'TextEdit', 'ESTADO': 'ValueMap', 'FOTO_ANTES': 'ExternalResource', 'FOTO_PINTURA': 'ExternalResource', 'FOTO_ROTULADO': 'ExternalResource', });
+lyr_grifos_2.set('fieldLabels', {'fid': 'hidden field', 'ID_GRIFO': 'inline label - visible with data', 'UBICACION': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'FOTO_ANTES': 'inline label - visible with data', 'FOTO_PINTURA': 'inline label - visible with data', 'FOTO_ROTULADO': 'hidden field', });
 lyr_grifos_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
