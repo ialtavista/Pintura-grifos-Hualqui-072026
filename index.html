@@ -217,7 +217,8 @@
                         <td class="visible-with-data" id="FOTO_PINTURA_VVPIE">' + (feature.properties['FOTO_PINTURA_VVPIE'] !== null ? '<img src="images/' + String(feature.properties['FOTO_PINTURA_VVPIE']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBSERVACION'] !== null ? autolinker.link(String(feature.properties['OBSERVACION']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBSERVACION</th>\
+                        <td>' + (feature.properties['OBSERVACION'] !== null ? autolinker.link(String(feature.properties['OBSERVACION']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
