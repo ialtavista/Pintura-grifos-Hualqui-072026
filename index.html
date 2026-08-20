@@ -43,7 +43,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-36.98905013805935,-72.96038036349032],[-36.95848432548647,-72.91819046397468]]);
+        }).fitBounds([[-36.98809351829412,-72.95468487255103],[-36.957488224214494,-72.91035410921904]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -212,6 +212,10 @@
                         <th scope="row">FOTO_ROTULADO_ID</th>\
                         <td class="visible-with-data" id="FOTO_ROTULADO_ID">' + (feature.properties['FOTO_ROTULADO_ID'] !== null ? '<img src="images/' + String(feature.properties['FOTO_ROTULADO_ID']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">FOTO_PINTURA_VVPIE</th>\
+                        <td class="visible-with-data" id="FOTO_PINTURA_VVPIE">' + (feature.properties['FOTO_PINTURA_VVPIE'] !== null ? '<img src="images/' + String(feature.properties['FOTO_PINTURA_VVPIE']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -302,6 +306,22 @@
                 interactive: true,
             }
                     break;
+                case 'FALTA PINTURA TAPA VV':
+                    return {
+                pane: 'pane_grifos_2',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(207,0,202,1.0)',
+                interactive: true,
+            }
+                    break;
             }
         }
         map.createPane('pane_grifos_2');
@@ -325,7 +345,7 @@
         bounds_group.addLayer(layer_grifos_2);
         map.addLayer(layer_grifos_2);
         var overlaysTree = [
-            {label: 'grifos<br /><table><tr><td style="text-align: center;"><img src="legend/grifos_2_PENDIENTE0.png" /></td><td>PENDIENTE</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_PINTADO1.png" /></td><td>PINTADO</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOVVDEPIE2.png" /></td><td>ROTULADO VV DE PIE</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOID3.png" /></td><td>ROTULADO ID</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOCOMPLETO4.png" /></td><td>ROTULADO COMPLETO</td></tr></table>', layer: layer_grifos_2},
+            {label: 'grifos<br /><table><tr><td style="text-align: center;"><img src="legend/grifos_2_PENDIENTE0.png" /></td><td>PENDIENTE</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_PINTADO1.png" /></td><td>PINTADO</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOVVDEPIE2.png" /></td><td>ROTULADO VV DE PIE</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOID3.png" /></td><td>ROTULADO ID</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_ROTULADOCOMPLETO4.png" /></td><td>ROTULADO COMPLETO</td></tr><tr><td style="text-align: center;"><img src="legend/grifos_2_FALTAPINTURATAPAVV5.png" /></td><td>FALTA PINTURA TAPA VV</td></tr></table>', layer: layer_grifos_2},
             {label: "Google Satelite", layer: layer_GoogleSatelite_1, radioGroup: 'bm' },
             {label: "OpenStreetMap", layer: layer_OpenStreetMap_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
